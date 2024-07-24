@@ -1,0 +1,5 @@
+#!/Users/jbt694/anaconda3/envs/glample/bin/python2.7
+
+from idlelib.PyShell import main
+if __name__ == '__main__':
+    main()
