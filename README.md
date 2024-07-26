@@ -37,6 +37,19 @@ When you had changed from the one who was all to me,   - + - + - - + - - + - +
 But as at first, when our day was fair.  ___________ + - - + - - + - +
 ```
 
+# Usgae (server mode)
+As the software requires python2.7, we can overcome this by running the scansion model as a server, and interact with it using a client from Python3.x. The server can be run using the `tagger_server.py` program:
+
+`scansion_env/bin/python2.7 tagger/tagger_server.py`
+
+And the client, is saved in this same directory:
+
+`python3 client.py "Woman much missed, how you call to me, call to me,"`
+
+Which performs scansion and cleanup, and therefore, it would return the following:
+
+`+- - + - - + - - + - +`
+
 # Citation
 
  - Agirrezabal, Manex, Iñaki Alegría, and Mans Hulden. ["A Comparison of Feature-Based and Neural Scansion of Poetry."](https://aclanthology.org/R17-1003/) Proceedings of the International Conference Recent Advances in Natural Language Processing, RANLP 2017. 2017.
