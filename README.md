@@ -37,7 +37,7 @@ When you had changed from the one who was all to me,   - + - + - - + - - + - +
 But as at first, when our day was fair.  ___________ + - - + - - + - +
 ```
 
-# Usgae (server mode)
+# Usage (server mode)
 As the software requires python2.7, we can overcome this by running the scansion model as a server, and interact with it using a client from Python3.x. The server can be run using the `tagger_server.py` program:
 
 `scansion_env/bin/python2.7 tagger/tagger_server.py`
