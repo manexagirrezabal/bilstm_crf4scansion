@@ -6,6 +6,9 @@ import codecs
 import optparse
 import json
 import numpy as np
+
+import re
+
 from loader import prepare_sentence
 from utils import create_input, iobes_iob, iob_ranges, zero_digits
 from model import Model
@@ -44,7 +47,7 @@ assert opts.delimiter
 
 # Load existing model
 print "Loading model..."
-modeldir = "/Users/jbt694/bilstm_crf4scansion/tagger/models/tag_scheme=iobes,lower=False,zeros=False,char_dim=25,char_lstm_dim=25,char_bidirect=True,word_dim=100,word_lstm_dim=100,word_bidirect=True,pre_emb=,all_emb=False,cap_dim=0,crf=True,dropout=0.5,lr_method=sgd-lr_.005/"
+modeldir = "/Users/jbt694/project_bilstm4scansion/bilstm_crf4scansion/tagger/models/tag_scheme=iobes,lower=False,zeros=False,char_dim=25,char_lstm_dim=25,char_bidirect=True,word_dim=100,word_lstm_dim=100,word_bidirect=True,pre_emb=,all_emb=False,cap_dim=0,crf=True,dropout=0.5,lr_method=sgd-lr_.005/"
 model = Model(model_path=modeldir)
 parameters = model.parameters
 
@@ -65,6 +68,9 @@ print 'Tagging...'
 
 def analyze_line(line):
     count = 0
+
+    line = re.sub("[^a-zA-Z\ ]","",line) #Cleanup
+
     words_ini = line.rstrip().split()
     result = ""
     if line:
@@ -108,8 +114,8 @@ class RequestHandler(BaseHTTPRequestHandler):
         print (parsed_url)
         print (params)
         inp = params['inp']
-        print ("Let's analyze this input: <"+str(inp)+">")
-        result = analyze_line(inp[0])
+        print ("Let's analyze this input: <"+str(inp[0].strip())+">")
+        result = analyze_line(inp[0].strip())
         print ("This is the result: <"+result+">")
         l = clean.divide_wan(result)
         cleanresult = " ".join(clean.reformatline(l))
