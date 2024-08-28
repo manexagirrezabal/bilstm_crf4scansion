@@ -50,6 +50,18 @@ Which performs scansion and cleanup, and therefore, it would return the followin
 
 `+- - + - - + - - + - +`
 
+### Scan a long text, line by line
+
+You can use the server to scan a document line by line. Run the server as shown above, and run this code in `bash`:
+
+```
+while read p; do   
+  python3 client.py "$p"
+done < text_to_scan.txt > text_to_scan.scansion
+```
+
+where `text_to_scan.txt` contains the text that you want to scan and the result will be written in `text_to_scan.scansion` as a plain text file.
+
 # Citation
 
  - Agirrezabal, Manex, Iñaki Alegría, and Mans Hulden. ["A Comparison of Feature-Based and Neural Scansion of Poetry."](https://aclanthology.org/R17-1003/) Proceedings of the International Conference Recent Advances in Natural Language Processing, RANLP 2017. 2017.
