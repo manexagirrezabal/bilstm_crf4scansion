@@ -1,5 +1,6 @@
-# BiLSTM+CRF model for poetry scansion
-This is the model for English poetry scansion that was presented in Agirrezabal (2017) and in Agirrezabal, Alegria and Hulden (2017).
+# ChronoScansion: A Neural Model for the Scansion of English Poetry
+
+This is the model for English poetry scansion that was presented in Agirrezabal (2017) and in Agirrezabal, Alegria and Hulden (2017). Presented as a poster in the Digital Humanities in the Nordic and the Baltic Countries conference (DHNB 2025).
 
 We used a corpus of English poetry for training and testing our models, called [For Better For Verse](https://github.com/manexagirrezabal/for_better_for_verse/tree/master/poems). The linked repository is a fork of the original repository. We made some changes so that our corpus reader reads the files properly. This corpus was developed by Herbert Tucker, from the Scholars' Lab at the University of Virginia especially for an [interactive website](http://prosody.lib.virginia.edu/) for learning how to scan English poetry.
 Then, we can read the corpus files using the following [script](https://github.com/manexagirrezabal/herascansion/blob/master/script.sh) written for the [HeraScansion](https://github.com/manexagirrezabal/herascansion) project (discontinued). This script requires the English poetry corpus reader that we have in the [following repository](https://bitbucket.org/manexagirrezabal/poetrycorpusreader/src/master/).
